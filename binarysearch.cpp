@@ -7,14 +7,15 @@ int binary_search(int element,int size, int *arr){
     
     while (low <=high){                                // low<= high for that edge conditions
         int mid = (low + high) / 2;
+        if(arr[mid] == element){
+            return mid;
+        }
         if(arr[mid] < element){
             low = mid + 1;
         }else if(arr[mid] > element){
             high = mid - 1  ;
         }
-        if(arr[mid] == element){
-            return mid;
-        }
+        
     }
     return -1;
 }
